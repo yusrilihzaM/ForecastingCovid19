@@ -1,77 +1,72 @@
 <div class="main-content">
     <section class="section">
-    <div class="flash-data-news" data-flashdata="<?= $this->session->flashdata('flash') ?>">
+        <div class="flash-data-news" data-flashdata="<?= $this->session->flashdata('flash') ?>">
 
-</div>
-<div class="flash-data-data" data-flashdata="<?= $this->session->flashdata('data') ?>">
-</div>
+        </div>
+        <div class="flash-data-data" data-flashdata="<?= $this->session->flashdata('data') ?>">
+        </div>
         <div class="section-header">
             <h1><?=$title;?></h1>
         </div>
         <div class="section-title">
-            <h4>Data Covid 19 di Surabaya</h4>
+            <h4>Data Kecamatan Seluruh Surabaya</h4>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="card card-statistic-1">
-                    <div class="card-icon bg-primary">
-                    <i class="fas fa-head-side-virus"></i>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-header">
-                            <h4>Positif</h4>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="flash-data-news" data-flashdata="<?= $this->session->flashdata('flash') ?>">
+
                         </div>
-                        <div class="card-body">
-                            10
+                        <div class="flash-data-data" data-flashdata="<?= $this->session->flashdata('data') ?>">
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="card card-statistic-1">
-                    <div class="card-icon bg-danger">
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-header">
-                            <h4>Perawatan</h4>
-                        </div>
-                        <div class="card-body">
-                            42
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="card card-statistic-1">
-                    <div class="card-icon bg-warning">
-                        <i class="fas fa-walking"></i>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-header">
-                            <h4>Sembuh</h4>
-                        </div>
-                        <div class="card-body">
-                            1,201
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="card card-statistic-1">
-                    <div class="card-icon bg-success">
-                        <i class="fas fa-dizzy"></i>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-header">
-                            <h4>Meninggal</h4>
-                        </div>
-                        <div class="card-body">
-                            47
-                        </div>
+                        <a href="<?=base_url()?>kecamatan/tambah" type="button p-1 mb-2 "
+                            class="btn btn-success far fa-plus mx-auto"> Kecamatan</a>
+                        <br>
+                        <br>
+
+                        <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                            style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Kecamatan</th>
+                                    <th>Aksi</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $n0 = 1; ?>
+                                <?php foreach ($kecamatan as $dtkec) : ?>
+                                <tr>
+                                    <td style="width: 4%;"><?= $n0?></td>
+                                    <td><a class="text-dark"
+                                            href="<?= base_url(); ?>Kecamatan/detail/<?= $dtkec['id_kecamatan']; ?>"
+                                            style=" color:white;" data-toggle="tooltip" data-placement="right"
+                                            title="Lihat data Kecamatan <?= $dtkec['kecamatan'] ?>"><?= $dtkec['kecamatan'] ?></a>
+                                    </td>
+                                    <td style="width: 15%;">
+                                        <a class="btn btn-warning  fas fa-edit"
+                                            href="<?= base_url(); ?>Kecamatan/edit/<?= $dtkec['id_kecamatan']; ?>"
+                                            style=" color:white;"></a>
+                                        <a class="btn btn-danger fas fa-trash-alt hapus-news"
+                                            href="<?= base_url(); ?>Kecamatan/hapus/<?= $dtkec['id_kecamatan']; ?>"
+                                            style="color:white;"></a>
+                                    </td>
+                                </tr>
+
+                                <?php $n0++ ?>
+                                <?php endforeach ?>
+                            </tbody>
+
+
+                        </table>
+
                     </div>
                 </div>
             </div>
+            <!-- end col -->
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12 col-sm-12">
