@@ -21,7 +21,8 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/components.css">
-
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="<?= base_url() ?>node_modules/bootstrap-social/bootstrap-social.css">
 <!-- Sweet Alert-->
     <link href="<?= base_url(); ?>assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
 
