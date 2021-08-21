@@ -45,7 +45,13 @@
                                 <tr>
                                     <td style="width: 4%;"><?= $n0?></td>
                                     <td><?= $data['tanggal_covid']?></td>
-                                    <td><?= $data['kecamatan']?></td>
+                                    <td>
+                                        <a class="text-dark"
+                                            href="<?= base_url(); ?>Dataset/dataperkec/<?= $data['id_kecamatan']; ?>"
+                                            style=" color:white;" data-toggle="tooltip" data-placement="right"
+                                            title="Lihat data Kecamatan <?= $data['kecamatan'] ?>"><?= $data['kecamatan'] ?></a>
+                                    </td>
+                                    
                                     <td><?= $data['data_covid']?></td>
                                     <td><?= $data['jenis_data']?></td>
                                     <td style="width: 15%;">

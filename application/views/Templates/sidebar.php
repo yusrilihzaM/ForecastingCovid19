@@ -12,8 +12,8 @@
                 <a href="<?=base_url()?>beranda" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
             <li class="menu-header">Data</li>
-            <li><a class="nav-link" href="<?=base_url()?>kecamatan"><i class="fas fa-map-marker-alt"></i> <span>Kecamatan</span></a></li>
-            <li><a class="nav-link" href="<?=base_url()?>dataset"><i class="fas fa-database"></i> <span>Dataset Covid</span></a></li>
+            <li><a class="nav-link" href="<?=base_url()?>kecamatan"><i class="fas fa-map-marker-alt"></i> <span>Data Kecamatan</span></a></li>
+            <li><a class="nav-link" href="<?=base_url()?>dataset"><i class="fas fa-database"></i> <span>Seluruh Data Covid 19</span></a></li>
         
             <li class="menu-header">Peramalan</li>
             <li><a class="nav-link" href="<?=base_url()?>parameterb"><i class="fas fa-bold"></i> <span>Parameter Beta</span></a></li>

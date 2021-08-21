@@ -18,11 +18,9 @@ class Dataset_model extends CI_model
     }
     public function get_dataset_byKecamatan($id_kecamatan)
     {
-        $this->db->select('*');
-        $this->db->from('data_covid');
-        $this ->db->join('kecamatan','data_covid.id_kecamatan=kecamatan.id_kecamatan', 'left');
-        $this->db->where('id_kecamatan',$id_kecamatan);
-        return $this->db->get()->row_array();
+       $query="SELECT * FROM data_covid NATURAL JOIN  kecamatan WHERE id_kecamatan=$id_kecamatan";
+       return $this->db->query($query)->result_array();
+       
     }
     public function update_dataset(
         $id_data_covid,
