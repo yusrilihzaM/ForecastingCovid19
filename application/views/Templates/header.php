@@ -32,6 +32,9 @@
 
     <!-- Responsive datatable examples -->
     <link href="<?= base_url() ?>assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- datepicker -->
+    <link href="<?= base_url() ?>assets/libs/air-datepicker/css/datepicker.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>

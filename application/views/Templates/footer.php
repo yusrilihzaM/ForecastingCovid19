@@ -59,6 +59,10 @@
 <script src="<?= base_url(); ?>assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
 <!-- Datatable init js -->
 <script src="<?= base_url(); ?>assets/js/page/datatables.init.js"></script>
+
+<!-- datepicker -->
+<script src="<?= base_url(); ?>assets/libs/air-datepicker/js/datepicker.min.js"></script>
+<script src="<?= base_url(); ?>assets/libs/air-datepicker/js/i18n/datepicker.en.js"></script>
 </body>
 
 </html>
