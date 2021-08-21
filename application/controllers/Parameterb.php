@@ -8,6 +8,7 @@ class Parameterb extends CI_Controller {
         parent::__construct();
         $this->load->model('User_model');
         $this->load->model('Parameter_model');
+        $this->load->model('Peramalan_model');
         is_logged_in();
     }
 	public function index()
@@ -29,6 +30,8 @@ class Parameterb extends CI_Controller {
         else{
             $beta =$this->input->post('beta', true);
             $this->Parameter_model->update_parameter($beta);
+            $this->Peramalan_model->delete_peramalan();
+            $this->Peramalan_model->hitung_model();
             $this->session->set_flashdata('flash', 'Diubah');
             $this->session->set_flashdata('data', 'Beta');
             redirect('Parameterb');
