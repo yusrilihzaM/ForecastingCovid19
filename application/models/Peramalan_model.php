@@ -21,9 +21,7 @@ class Peramalan_model extends CI_model
         $query_dataPerkecamatan="SELECT * FROM data_covid NATURAL JOIN  kecamatan WHERE id_kecamatan=$id_kecamatan AND jenis_data='$jenis_data' ORDER BY tanggal_covid ASC";
         $dataPerkecamatan=$this->db->query($query_dataPerkecamatan)->result_array();
         
-        //ambil count data
-        $query_countData="SELECT count(id_data_covid) FROM data_covid NATURAL JOIN  kecamatan WHERE id_kecamatan=$id_kecamatan AND jenis_data='$jenis_data'";
-        $countData=$this->db->query($query_countData)->result_array();
+       
         
         //ambil parameter beta
         $query_Beta="SELECT beta FROM parameter_beta";
@@ -181,5 +179,41 @@ class Peramalan_model extends CI_model
     public function delete_peramalan()
     {
         $this->db->empty_table('perhitungan');
+    }
+
+    public function get_periode_masa_depan($id_kecamatan,$jenis_data)
+    {
+        
+         //ambil count data
+         $query_countData="SELECT count(id_data_covid) as count FROM data_covid NATURAL JOIN  kecamatan WHERE id_kecamatan=$id_kecamatan AND jenis_data='$jenis_data'";
+         $countData=(int)$this->db->query($query_countData)->row_array()['count'];
+
+        $query_dataSebelumnya="SELECT * FROM perhitungan NATURAL JOIN data_covid NATURAL JOIN kecamatan WHERE id_kecamatan=$id_kecamatan AND jenis_data='$jenis_data' ORDER BY tanggal_covid DESC";
+        $dataSebelumnya=$this->db->query($query_dataSebelumnya)->row_array();
+        // data at-1
+        $atSebelumnya= $dataSebelumnya['data_covid'];
+                    
+        //data ft-1
+        $ftSebelumnya= $dataSebelumnya['ft'];
+
+        //alpha -1
+        $alphaSebelumnya=$dataSebelumnya['alpha'];
+
+        //tanggal sebelumnya
+        $tglSebelumnya= $dataSebelumnya['tanggal_covid'];
+
+        if($countData==0){
+            $tglMasaDepan="-";
+            $periode_masa_depan="-";
+        }else{
+            $tglMasaDepan=date('Y-m-d', strtotime($tglSebelumnya. ' + 1 days'));
+            $periode_masa_depan=(double)($alphaSebelumnya*$atSebelumnya)+((1-$alphaSebelumnya)*$ftSebelumnya);
+        }
+        
+        $data=[
+            "tanggal_ramal"=>$tglMasaDepan,
+            "data_ramal"=>$periode_masa_depan
+        ];
+        return $data;
     }
 }

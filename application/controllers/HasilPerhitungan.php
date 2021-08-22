@@ -9,6 +9,7 @@ class HasilPerhitungan extends CI_Controller {
         $this->load->model('User_model');
         $this->load->model('Kecamatan_model');
         $this->load->model('Perhitungan_model');
+        $this->load->model('Peramalan_model');
         is_logged_in();
     }
 	public function index()
@@ -43,6 +44,11 @@ class HasilPerhitungan extends CI_Controller {
         $data['mape_meninggal_perhitungan']=$this->Perhitungan_model->get_mape($id,"Meninggal");
         $data['mape_sembuh_perhitungan']=$this->Perhitungan_model->get_mape($id,"Sembuh");
         $data['mape_perawatan_perhitungan']=$this->Perhitungan_model->get_mape($id,"Perawatan");
+
+        $data['masadepan_positif_perhitungan']=$this->Peramalan_model->get_periode_masa_depan($id,"Positif");
+        $data['masadepan_meninggal_perhitungan']=$this->Peramalan_model->get_periode_masa_depan($id,"Meninggal");
+        $data['masadepan_sembuh_perhitungan']=$this->Peramalan_model->get_periode_masa_depan($id,"Sembuh");
+        $data['masadepan_perawatan_perhitungan']=$this->Peramalan_model->get_periode_masa_depan($id,"Perawatan");
 
         $this->load->view('Templates/header.php',$data);
         $this->load->view('Templates/navbar.php',$data);

@@ -1,10 +1,3 @@
-<?php
-echo($mape_positif_perhitungan);
-die;?>
-
-
-
-
 <div class="main-content">
     <section class="section">
         <div class="flash-data-news" data-flashdata="<?= $this->session->flashdata('flash') ?>">
@@ -101,7 +94,7 @@ die;?>
                                                     echo "'$data'".',';
                                                 endforeach;
                                             ?>
-                                            
+
                                         ]
                                     }
                                 }
@@ -159,7 +152,7 @@ die;?>
                                                     echo "'$data'".',';
                                                 endforeach;
                                             ?>
-                                            
+
                                         ]
                                     }
                                 }
@@ -170,7 +163,7 @@ die;?>
                                 </script>
                             </div>
                             <div class="tab-pane" id="sembuh-1" role="tabpanel">
-                            <div id="chart_sembuh">
+                                <div id="chart_sembuh">
                                 </div>
                                 <script>
                                 var options = {
@@ -217,7 +210,7 @@ die;?>
                                                     echo "'$data'".',';
                                                 endforeach;
                                             ?>
-                                            
+
                                         ]
                                     }
                                 }
@@ -228,7 +221,7 @@ die;?>
                                 </script>
                             </div>
                             <div class="tab-pane" id="meninggal-1" role="tabpanel">
-                               <div id="chart_meninggal">
+                                <div id="chart_meninggal">
                                 </div>
                                 <script>
                                 var options = {
@@ -275,7 +268,7 @@ die;?>
                                                     echo "'$data'".',';
                                                 endforeach;
                                             ?>
-                                            
+
                                         ]
                                     }
                                 }
@@ -302,23 +295,23 @@ die;?>
                         <!-- Nav tabs -->
                         <ul class="nav nav-pills" role="tablist">
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link active" data-toggle="tab" href="#positif-1" role="tab">
+                                <a class="nav-link active" data-toggle="tab" href="#mape_positif-1" role="tab">
                                     <i class="fas fa-head-side-virus"></i> <span
                                         class="d-none d-md-inline-block">Positif</span>
                                 </a>
                             </li>
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link" data-toggle="tab" href="#perawatan-1" role="tab">
+                                <a class="nav-link" data-toggle="tab" href="#mape_perawatan-1" role="tab">
                                     <i class="fas fa-bed"></i> <span class="d-none d-md-inline-block">Perawatan</span>
                                 </a>
                             </li>
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link" data-toggle="tab" href="#sembuh-1" role="tab">
+                                <a class="nav-link" data-toggle="tab" href="#mape_sembuh-1" role="tab">
                                     <i class="fas fa-walking"></i> <span class="d-none d-md-inline-block">Sembuh</span>
                                 </a>
                             </li>
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link" data-toggle="tab" href="#meninggal-1" role="tab">
+                                <a class="nav-link" data-toggle="tab" href="#mape_meninggal-1" role="tab">
                                     <i class="fas fa-dizzy"></i> <span class="d-none d-md-inline-block">Meninggal</span>
                                 </a>
                             </li>
@@ -326,25 +319,53 @@ die;?>
 
                         <!-- Tab panes -->
                         <div class="tab-content p-3">
-                            <div class="tab-pane active" id="positif-1" role="tabpanel">
-                                <p class="mb-0">
-                                    positif
-                                </p>
+                            <div class="tab-pane active" id="mape_positif-1" role="tabpanel">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-md">
+                                        <tr>
+                                            <th>MAPE</th>
+                                        </tr>
+                                        <tr>
+                                            <td><?=$mape_positif_perhitungan?></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="tab-pane" id="perawatan-1" role="tabpanel">
-                                <p class="mb-0">
-                                    perawatan
-                                </p>
+                            <div class="tab-pane" id="mape_perawatan-1" role="tabpanel">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-md">
+                                        <tr>
+                                            <th>MAPE</th>
+                                        </tr>
+                                        <tr>
+                                            <td><?=$mape_perawatan_perhitungan?></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="tab-pane" id="sembuh-1" role="tabpanel">
-                                <p class="mb-0">
-                                    sembuh
-                                </p>
+                            <div class="tab-pane" id="mape_sembuh-1" role="tabpanel">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-md">
+                                        <tr>
+                                            <th>MAPE</th>
+                                        </tr>
+                                        <tr>
+                                            <td><?=$mape_sembuh_perhitungan?></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="tab-pane" id="meninggal-1" role="tabpanel">
-                                <p class="mb-0">
-                                    meninggal
-                                </p>
+                            <div class="tab-pane" id="mape_meninggal-1" role="tabpanel">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-md">
+                                        <tr>
+                                            <th>MAPE</th>
+                                        </tr>
+                                        <tr>
+                                            <td><?=$mape_meninggal_perhitungan?></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
 
@@ -363,23 +384,23 @@ die;?>
                         <!-- Nav tabs -->
                         <ul class="nav nav-pills" role="tablist">
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link active" data-toggle="tab" href="#positif-1" role="tab">
+                                <a class="nav-link active" data-toggle="tab" href="#peramalan_positif-1" role="tab">
                                     <i class="fas fa-head-side-virus"></i> <span
                                         class="d-none d-md-inline-block">Positif</span>
                                 </a>
                             </li>
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link" data-toggle="tab" href="#perawatan-1" role="tab">
+                                <a class="nav-link" data-toggle="tab" href="#peramalan_perawatan-1" role="tab">
                                     <i class="fas fa-bed"></i> <span class="d-none d-md-inline-block">Perawatan</span>
                                 </a>
                             </li>
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link" data-toggle="tab" href="#sembuh-1" role="tab">
+                                <a class="nav-link" data-toggle="tab" href="#peramalan_sembuh-1" role="tab">
                                     <i class="fas fa-walking"></i> <span class="d-none d-md-inline-block">Sembuh</span>
                                 </a>
                             </li>
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link" data-toggle="tab" href="#meninggal-1" role="tab">
+                                <a class="nav-link" data-toggle="tab" href="#peramalan_meninggal-1" role="tab">
                                     <i class="fas fa-dizzy"></i> <span class="d-none d-md-inline-block">Meninggal</span>
                                 </a>
                             </li>
@@ -387,25 +408,77 @@ die;?>
 
                         <!-- Tab panes -->
                         <div class="tab-content p-3">
-                            <div class="tab-pane active" id="positif-1" role="tabpanel">
-                                <p class="mb-0">
-                                    positif
-                                </p>
+                            <div class="tab-pane active" id="peramalan_positif-1" role="tabpanel">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-md">
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Tanggal</th>
+                                            <th>Periode Masa Depan</th>
+                                        </tr>
+
+                                        <tr>
+                                            <td>1.</td>
+                                            <td><?=$masadepan_positif_perhitungan['tanggal_ramal']?></td>
+                                            <td><?=$masadepan_positif_perhitungan['data_ramal']?></td>
+                                        </tr>
+
+                                    </table>
+                                </div>
                             </div>
-                            <div class="tab-pane" id="perawatan-1" role="tabpanel">
-                                <p class="mb-0">
-                                    perawatan
-                                </p>
+                            <div class="tab-pane" id="peramalan_perawatan-1" role="tabpanel">
+                            <div class="table-responsive">
+                                    <table class="table table-bordered table-md">
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Tanggal</th>
+                                            <th>Periode Masa Depan</th>
+                                        </tr>
+
+                                        <tr>
+                                            <td>1.</td>
+                                            <td><?=$masadepan_perawatan_perhitungan['tanggal_ramal']?></td>
+                                            <td><?=$masadepan_perawatan_perhitungan['data_ramal']?></td>
+                                        </tr>
+
+                                    </table>
+                                </div>
                             </div>
-                            <div class="tab-pane" id="sembuh-1" role="tabpanel">
-                                <p class="mb-0">
-                                    sembuh
-                                </p>
+                            <div class="tab-pane" id="peramalan_sembuh-1" role="tabpanel">
+                            <div class="table-responsive">
+                                    <table class="table table-bordered table-md">
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Tanggal</th>
+                                            <th>Periode Masa Depan</th>
+                                        </tr>
+
+                                        <tr>
+                                            <td>1.</td>
+                                            <td><?=$masadepan_sembuh_perhitungan['tanggal_ramal']?></td>
+                                            <td><?=$masadepan_sembuh_perhitungan['data_ramal']?></td>
+                                        </tr>
+
+                                    </table>
+                                </div>
                             </div>
-                            <div class="tab-pane" id="meninggal-1" role="tabpanel">
-                                <p class="mb-0">
-                                    meninggal
-                                </p>
+                            <div class="tab-pane" id="peramalan_meninggal-1" role="tabpanel">
+                            <div class="table-responsive">
+                                    <table class="table table-bordered table-md">
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Tanggal</th>
+                                            <th>Periode Masa Depan</th>
+                                        </tr>
+
+                                        <tr>
+                                            <td>1.</td>
+                                            <td><?=$masadepan_meninggal_perhitungan['tanggal_ramal']?></td>
+                                            <td><?=$masadepan_meninggal_perhitungan['data_ramal']?></td>
+                                        </tr>
+
+                                    </table>
+                                </div>
                             </div>
                         </div>
 
@@ -414,6 +487,7 @@ die;?>
             </div>
             <!-- end col -->
         </div>
+
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -424,23 +498,23 @@ die;?>
                         <!-- Nav tabs -->
                         <ul class="nav nav-pills" role="tablist">
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link active" data-toggle="tab" href="#perhitungan-positif-1" role="tab">
+                                <a class="nav-link active" data-toggle="tab" href="#perhitungan_positif-1" role="tab">
                                     <i class="fas fa-head-side-virus"></i> <span
                                         class="d-none d-md-inline-block">Positif</span>
                                 </a>
                             </li>
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link" data-toggle="tab" href="#perhitungan-perawatan-1" role="tab">
+                                <a class="nav-link" data-toggle="tab" href="#perhitungan_perawatan-1" role="tab">
                                     <i class="fas fa-bed"></i> <span class="d-none d-md-inline-block">Perawatan</span>
                                 </a>
                             </li>
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link" data-toggle="tab" href="#perhitungan-sembuh-1" role="tab">
+                                <a class="nav-link" data-toggle="tab" href="#perhitungan_sembuh-1" role="tab">
                                     <i class="fas fa-walking"></i> <span class="d-none d-md-inline-block">Sembuh</span>
                                 </a>
                             </li>
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link" data-toggle="tab" href="perhitungan-#meninggal-1" role="tab">
+                                <a class="nav-link" data-toggle="tab" href="#perhitungan_meninggal-1" role="tab">
                                     <i class="fas fa-dizzy"></i> <span class="d-none d-md-inline-block">Meninggal</span>
                                 </a>
                             </li>
@@ -448,10 +522,10 @@ die;?>
 
                         <!-- Tab panes -->
                         <div class="tab-content p-3">
-                            <div class="tab-pane active" id="perhitungan-positif-1" role="tabpanel">
-                                <table class=" display table table-bordered dt-responsive nowrap"
-                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                    <thead>
+                            <div class="tab-pane active" id="perhitungan_positif-1" role="tabpanel">
+
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-md">
                                         <tr>
                                             <th>No.</th>
                                             <th>Tanggal</th>
@@ -460,37 +534,31 @@ die;?>
                                             <th>et</th>
                                             <th>Et</th>
                                             <th>AEt</th>
-                                            <th>Alpha</th>
-                                            <th>MAPE</th>
-
+                                            <th>alpha</th>
+                                            <th>mape</th>
                                         </tr>
-                                    </thead>
-                                    <tbody>
                                         <?php $n0 = 1; ?>
-                                        <?php foreach ($positif_perhitungan as $data) : ?>
+                                        <?php foreach ($positif_perhitungan as $positif_perhitungan) : ?>
                                         <tr>
                                             <td><?= $n0?></td>
-                                            <td><?= $data['tanggal_covid']?></td>
-                                            <td><?= $data['data_covid']?></td>
-                                            <td><?= $data['ft']?></td>
-                                            <td><?= $data['error']?></td>
-                                            <td><?= $data['Et']?></td>
-                                            <td><?= $data['AEt']?></td>
-                                            <td><?= $data['alpha']?></td>
-                                            <td><?= $data['mape']?></td>
+                                            <td><?= $positif_perhitungan['tanggal_covid']?></td>
+                                            <td><?= $positif_perhitungan['data_covid']?></td>
+                                            <td><?= $positif_perhitungan['ft']?></td>
+                                            <td><?= $positif_perhitungan['error']?></td>
+                                            <td><?= $positif_perhitungan['Et']?></td>
+                                            <td><?= $positif_perhitungan['AEt']?></td>
+                                            <td><?= $positif_perhitungan['alpha']?></td>
+                                            <td><?= $positif_perhitungan['mape']?></td>
                                         </tr>
                                         <?php $n0++ ?>
                                         <?php endforeach ?>
+                                    </table>
+                                </div>
 
-                                    </tbody>
-
-
-                                </table>
                             </div>
-                            <div class="tab-pane" id="perhitungan-perawatan-1" role="tabpanel">
-                                <table class="display table table-bordered dt-responsive nowrap"
-                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                    <thead>
+                            <div class="tab-pane" id="perhitungan_perawatan-1" role="tabpanel">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-md">
                                         <tr>
                                             <th>No.</th>
                                             <th>Tanggal</th>
@@ -499,42 +567,90 @@ die;?>
                                             <th>et</th>
                                             <th>Et</th>
                                             <th>AEt</th>
-                                            <th>Alpha</th>
-                                            <th>MAPE</th>
-
+                                            <th>alpha</th>
+                                            <th>mape</th>
                                         </tr>
-                                    </thead>
-                                    <tbody>
                                         <?php $n0 = 1; ?>
-                                        <?php foreach ($positif_perhitungan as $data) : ?>
+                                        <?php foreach ($perawatan_perhitungan as $perawatan_perhitungan) : ?>
                                         <tr>
                                             <td><?= $n0?></td>
-                                            <td><?= $data['tanggal_covid']?></td>
-                                            <td><?= $data['data_covid']?></td>
-                                            <td><?= $data['ft']?></td>
-                                            <td><?= $data['error']?></td>
-                                            <td><?= $data['Et']?></td>
-                                            <td><?= $data['AEt']?></td>
-                                            <td><?= $data['alpha']?></td>
-                                            <td><?= $data['mape']?></td>
+                                            <td><?= $perawatan_perhitungan['tanggal_covid']?></td>
+                                            <td><?= $perawatan_perhitungan['data_covid']?></td>
+                                            <td><?= $perawatan_perhitungan['ft']?></td>
+                                            <td><?= $perawatan_perhitungan['error']?></td>
+                                            <td><?= $perawatan_perhitungan['Et']?></td>
+                                            <td><?= $perawatan_perhitungan['AEt']?></td>
+                                            <td><?= $perawatan_perhitungan['alpha']?></td>
+                                            <td><?= $perawatan_perhitungan['mape']?></td>
                                         </tr>
                                         <?php $n0++ ?>
                                         <?php endforeach ?>
-
-                                    </tbody>
-
-
-                                </table>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="tab-pane" id="perhitungan-sembuh-1" role="tabpanel">
-                                <p class="mb-0">
-                                    sembuh
-                                </p>
+                            <div class="tab-pane" id="perhitungan_sembuh-1" role="tabpanel">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-md">
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Tanggal</th>
+                                            <th>At</th>
+                                            <th>Ft</th>
+                                            <th>et</th>
+                                            <th>Et</th>
+                                            <th>AEt</th>
+                                            <th>alpha</th>
+                                            <th>mape</th>
+                                        </tr>
+                                        <?php $n0 = 1; ?>
+                                        <?php foreach ($sembuh_perhitungan as $sembuh_perhitungan) : ?>
+                                        <tr>
+                                            <td><?= $n0?></td>
+                                            <td><?= $sembuh_perhitungan['tanggal_covid']?></td>
+                                            <td><?= $sembuh_perhitungan['data_covid']?></td>
+                                            <td><?= $sembuh_perhitungan['ft']?></td>
+                                            <td><?= $sembuh_perhitungan['error']?></td>
+                                            <td><?= $sembuh_perhitungan['Et']?></td>
+                                            <td><?= $sembuh_perhitungan['AEt']?></td>
+                                            <td><?= $sembuh_perhitungan['alpha']?></td>
+                                            <td><?= $sembuh_perhitungan['mape']?></td>
+                                        </tr>
+                                        <?php $n0++ ?>
+                                        <?php endforeach ?>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="tab-pane" id="perhitungan-meninggal-1" role="tabpanel">
-                                <p class="mb-0">
-                                    meninggal
-                                </p>
+                            <div class="tab-pane" id="perhitungan_meninggal-1" role="tabpanel">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-md">
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Tanggal</th>
+                                            <th>At</th>
+                                            <th>Ft</th>
+                                            <th>et</th>
+                                            <th>Et</th>
+                                            <th>AEt</th>
+                                            <th>alpha</th>
+                                            <th>mape</th>
+                                        </tr>
+                                        <?php $n0 = 1; ?>
+                                        <?php foreach ($meninggal_perhitungan as $meninggal_perhitungan) : ?>
+                                        <tr>
+                                            <td><?= $n0?></td>
+                                            <td><?= $meninggal_perhitungan['tanggal_covid']?></td>
+                                            <td><?= $meninggal_perhitungan['data_covid']?></td>
+                                            <td><?= $meninggal_perhitungan['ft']?></td>
+                                            <td><?= $meninggal_perhitungan['error']?></td>
+                                            <td><?= $meninggal_perhitungan['Et']?></td>
+                                            <td><?= $meninggal_perhitungan['AEt']?></td>
+                                            <td><?= $meninggal_perhitungan['alpha']?></td>
+                                            <td><?= $meninggal_perhitungan['mape']?></td>
+                                        </tr>
+                                        <?php $n0++ ?>
+                                        <?php endforeach ?>
+                                    </table>
+                                </div>
                             </div>
                         </div>
 
@@ -543,7 +659,6 @@ die;?>
             </div>
             <!-- end col -->
         </div>
-
     </section>
 </div>
 <script>

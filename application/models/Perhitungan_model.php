@@ -15,8 +15,15 @@ class Perhitungan_model extends CI_model
 
         $query_countData="SELECT count(id_data_covid) as count FROM data_covid NATURAL JOIN  kecamatan WHERE id_kecamatan=$id_kecamatan AND jenis_data='$jenis_data'";
         $countData=(int)$this->db->query($query_countData)->row_array()['count'];
-
-        $mape=$sumMape/$countData;
+        
+        if($sumMape==0 or $countData==0){
+            $mape=0;
+        }
+        else{
+            $mape=$sumMape/$countData;
+        }
+        
+        
         return $mape;
     }
 }
