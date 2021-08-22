@@ -22,7 +22,7 @@
                             <h4>Positif</h4>
                         </div>
                         <div class="card-body">
-                            10
+                           <?=$count_positif;?>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                             <h4>Perawatan</h4>
                         </div>
                         <div class="card-body">
-                            42
+                        <?=$count_perawatan;?>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                             <h4>Sembuh</h4>
                         </div>
                         <div class="card-body">
-                            1,201
+                        <?=$count_sembuh;?>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                             <h4>Meninggal</h4>
                         </div>
                         <div class="card-body">
-                            47
+                        <?=$count_meninggal;?>
                         </div>
                     </div>
                 </div>

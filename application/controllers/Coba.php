@@ -15,7 +15,7 @@ class Coba extends CI_Controller {
     }
     public function index()
 	{
-        $coba=$this->Peramalan_model->get_periode_masa_depan('1',"Sembuh");
+        $coba=$this->Dataset_model->get_sum_dataset("Positif");
         // $coba=$this->Peramalan_model->hitung_model();
         var_dump($coba);
         

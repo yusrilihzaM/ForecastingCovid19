@@ -51,4 +51,11 @@ class Dataset_model extends CI_model
         $this->db->where('id_data_covid', $id_data_covid);
         $this->db->delete('data_covid');
     }
+
+    public function get_sum_dataset($jenis_data)
+    {
+        $query_data="SELECT COUNT(id_data_covid) as count FROM data_covid WHERE  jenis_data='$jenis_data'";
+        $data=(int)$this->db->query($query_data)->row_array()["count"];
+        return $data;
+    }
 }
