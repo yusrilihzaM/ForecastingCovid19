@@ -39,6 +39,11 @@ class HasilPerhitungan extends CI_Controller {
         $data['perawatan_perhitungan']=$this->Perhitungan_model->get_perhitungan_byKec($id,"Perawatan");
         
 
+        $data['mape_positif_perhitungan']=$this->Perhitungan_model->get_mape($id,"Positif");
+        $data['mape_meninggal_perhitungan']=$this->Perhitungan_model->get_mape($id,"Meninggal");
+        $data['mape_sembuh_perhitungan']=$this->Perhitungan_model->get_mape($id,"Sembuh");
+        $data['mape_perawatan_perhitungan']=$this->Perhitungan_model->get_mape($id,"Perawatan");
+
         $this->load->view('Templates/header.php',$data);
         $this->load->view('Templates/navbar.php',$data);
         $this->load->view('Templates/sidebar.php',$data);

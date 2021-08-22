@@ -3,7 +3,7 @@ class Peramalan_model extends CI_model
 {
   
     public function hitung_model(){
-        
+        $this->delete_peramalan();
         $query_datakecamatan="SELECT * FROM kecamatan ORDER BY id_kecamatan asc";
         $datakecamatan=$this->db->query($query_datakecamatan)->result_array();
         $jenis_data = array('Meninggal','Perawatan','Positif', 'Sembuh');
@@ -83,15 +83,16 @@ class Peramalan_model extends CI_model
 
                 //data at-1 
                 $atSebelumnya= $dataPerkecamatan[$index-1]['data_covid'];
-
+                
                 //data ft-1
                 $ftSebelumnya= $dataSebelumnya['ft'];
-
+                
+                $alphaSebelumnya=$dataSebelumnya['alpha'];
                 //alpha
                 $alpha=$Beta;
                
                 //ft
-                $ft=($alpha*$atSebelumnya)+((1-$alpha)*$ftSebelumnya);
+                $ft=($alphaSebelumnya*$atSebelumnya)+((1-$alphaSebelumnya)*$ftSebelumnya);
                 
                 // //error
                 $error=$at-$ft;
@@ -121,10 +122,10 @@ class Peramalan_model extends CI_model
          {
                 //data at
                 $at=$dataPerkecamatan[$index]['data_covid'];
-
+                
                 // data at-1
                 $atSebelumnya= $dataSebelumnya['data_covid'];
-
+               
                 //data ft-1
                 $ftSebelumnya= $dataSebelumnya['ft'];
 
@@ -134,16 +135,17 @@ class Peramalan_model extends CI_model
                 //Data AEt-1
                 $AEtSebelumnya=$dataSebelumnya['AEt'];
 
-
+                $alphaSebelumnya=$dataSebelumnya['alpha'];
+              
                 // data alpha jika alpha ==0 maka set alpha 0                
-                if($EtSebelumnya!=0 and $AEtSebelumnya!=0){
-                    $alpha=abs($EtSebelumnya/$AEtSebelumnya);
-                }else{
-                    $alpha=0;
-                }
-
+                // if($EtSebelumnya!=0 and $AEtSebelumnya!=0){
+                //     $alpha=abs($EtSebelumnya/$AEtSebelumnya);
+                // }else{
+                //     $alpha=0;
+                // }
+                $alpha=abs($EtSebelumnya/$AEtSebelumnya);
                 // ft
-                $ft=($alpha*$atSebelumnya)+((1-$alpha)*$ftSebelumnya);
+                $ft=(double)($alphaSebelumnya*$atSebelumnya)+((1-$alphaSebelumnya)*$ftSebelumnya);
 
                 // //error
                 $error=$at-$ft;
@@ -155,6 +157,12 @@ class Peramalan_model extends CI_model
                 $AEt=abs(($Beta*$error)+(1-$Beta)*$AEtSebelumnya);
                 //mape
                 $mape=abs($error/$at)*100;
+
+                echo("atSebelumnya  $atSebelumnya<br>");
+                echo("ftSebelumnya  $ftSebelumnya<br>");
+                echo("EtSebelumnya  $EtSebelumnya<br>");
+                echo("AEtSebelumnya  $AEtSebelumnya<br>");
+                echo("($alphaSebelumnya x $atSebelumnya) plus ((1 min $alphaSebelumnya) x$ftSebelumnya) =$ft<br>");
                 $data = array(
                     'id_perhitungan'    => "",
                     'id_data_covid'    => $dataPerkecamatan[$index]['id_data_covid'],

@@ -10,11 +10,17 @@ class Coba extends CI_Controller {
         $this->load->model('Dataset_model');
         $this->load->model('Kecamatan_model');
         $this->load->model('Peramalan_model');
+        $this->load->model('Perhitungan_model');
         is_logged_in();
     }
     public function index()
 	{
-        $this->Peramalan_model->hitung_model();
+        $coba=$this->Perhitungan_model->get_mape('1',"Positif");
+        // $coba=$this->Peramalan_model->hitung_model();
+        var_dump($coba);
+        
+        // echo($coba[0]);
+    
     }
     
 }

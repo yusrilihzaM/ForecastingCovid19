@@ -63,6 +63,19 @@
 <!-- datepicker -->
 <script src="<?= base_url(); ?>assets/libs/air-datepicker/js/datepicker.min.js"></script>
 <script src="<?= base_url(); ?>assets/libs/air-datepicker/js/i18n/datepicker.en.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<!-- Chart JS -->
+<script src="<?= base_url() ?>assets/libs/chart.js/Chart.bundle.min.js"></script>
+<script src="<?= base_url() ?>assets/js/page/chartjs.init.js"></script>
+<!-- Plugin Js-->
+<script src="<?= base_url() ?>assets/libs/chartist/chartist.min.js"></script>
+<!-- demo js-->
+<script src="<?= base_url() ?>assets/js/page/chartist.init.js"></script>
+<!-- Plugin Js-->
+<script src="<?= base_url() ?>assets/libs/apexcharts/apexcharts.min.js"></script>
+<!-- demo js-->
+<script src="<?= base_url() ?>assets/js/page/apex.init.js"></script>
 </body>
 
 </html>

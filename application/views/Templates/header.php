@@ -35,6 +35,7 @@
 
     <!-- datepicker -->
     <link href="<?= base_url() ?>assets/libs/air-datepicker/css/datepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url()?>assets/libs/chartist/chartist.min.css" rel="stylesheet">
 </head>
 
 <body>

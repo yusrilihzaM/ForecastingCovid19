@@ -30,7 +30,7 @@ class Parameterb extends CI_Controller {
         else{
             $beta =$this->input->post('beta', true);
             $this->Parameter_model->update_parameter($beta);
-            $this->Peramalan_model->delete_peramalan();
+          
             $this->Peramalan_model->hitung_model();
             $this->session->set_flashdata('flash', 'Diubah');
             $this->session->set_flashdata('data', 'Beta');
